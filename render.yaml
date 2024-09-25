@@ -4,6 +4,5 @@ services:
     name: BoxLang Service
     env: docker  # Use Docker environment
     plan: free   # Specify the free plan
-    docker:
-      image: ortussolutions/boxlang:miniserver 
+    image: ortussolutions/boxlang:miniserver 
     autoDeploy: true  # Set to true for auto-deploy on push
