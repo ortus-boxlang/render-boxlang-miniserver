@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export BUILD_DIR="${1}"
-export CACHE_DIR="${2}"
-export ENV_DIR="${3}"
+# Define the build directory
+BUILD_DIR="/app"
 
 # Download Adoptium JDK 21 (OpenJDK 21) and extract it
 echo "-----> Installing Adoptium JDK 21"
@@ -31,9 +30,5 @@ if [ $? -ne 0 ]; then
     echo "Failed to download BoxLang JAR"
     exit 1
 fi
-
-# Create the Procfile for app startup using absolute path
-echo "-----> Creating Procfile"
-echo "web: jdk-21+35/bin/java -jar boxlang.jar --debug --port \$PORT --host 0.0.0.0" > "$BUILD_DIR/Procfile"
 
 echo "-----> Build completed successfully."
