@@ -1,0 +1,8 @@
+version: 1
+services:
+  - type: web
+    name: BoxLang Service
+    plan: free   # or choose another plan
+    buildCommand: ./install.sh  # command to run during the build process
+    startCommand: /app/jdk-21+35/bin/java -jar /app/boxlang.jar --debug --port $PORT --host 0.0.0.0
+    autoDeploy: true  # set to true if you want auto-deploy on push
